@@ -17,7 +17,6 @@ Download and include SDL3, SDL3_ttf, SDL3_image, and miniaudio.
 
 Include it in CMake:
 ```cmake
-set(ANGEL_INSTALL OFF)
 add_subdirectory(Angel) # or the directory you put it in.
 ```
 
