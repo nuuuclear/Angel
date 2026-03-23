@@ -1,4 +1,5 @@
-# Angel
+![logo](./Angel.png)
+<br>
 Angel is a 2D game engine written in c++ using SDL3 and miniaudio.
 
 ## To use it in you project:
@@ -15,14 +16,13 @@ git clone https://github.com/nuuuclear/Angel
 
 Download and include SDL3, SDL3_ttf, SDL3_image, and miniaudio.
 
-Include it in CMake:
+Using CMake:
 ```cmake
+# inlcude it:
 add_subdirectory(Angel) # or the directory you put it in.
-```
 
-And link it to your project:
-```cmake
-target_link_libraries(game PRIVATE angel::angel)
+# link it to your project:
+target_link_libraries(YourGame PRIVATE angel::angel)
 ```
 
 In your main.cpp:
@@ -61,8 +61,8 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-And on how to actually use the game engine, for now just look throught the source code. 
-I will be making a wiki/documentation on how to use it once it is a little further into development!
+To actually use the game engine, for now just look around in the source code. this is a work in progress! 
+I will be making a wiki/documentation on how to use it once it is a little further into development.
 <hr>
 
-As of now, this only works on Windows. although it shouldn't be too hard to get working else where.
+As of now this only works on Windows, although it wouldn't be too hard to get working elsewhere.
