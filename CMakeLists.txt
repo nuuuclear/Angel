@@ -9,6 +9,17 @@ find_package(SDL3_ttf   REQUIRED)
 
 option(ANGEL_INSTALL "enable install rules for Angel" OFF)
 
+####################
+#     External     #
+####################
+
+add_library(miniaudio
+    "${CMAKE_CURRENT_SOURCE_DIR}/${EXTERNAL_DIR}/miniaudio/miniaudio.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/${EXTERNAL_DIR}/miniaudio/miniaudio.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/${EXTERNAL_DIR}/stb_vorbis.c"
+)
+target_include_directories(miniaudio PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/${EXTERNAL_DIR}/miniaudio")
+
 ########################
 #     Angel engine     #
 ########################
@@ -69,12 +80,17 @@ target_sources(angel PRIVATE
     "${ANGEL_SOURCE_DIR}/ResourceLoading.cpp"
     "${ANGEL_SOURCE_DIR}/StaticLoader.h"
     "${ANGEL_SOURCE_DIR}/StaticLoader.cpp"
+    "${ANGEL_SOURCE_DIR}/Audio.h"
+    "${ANGEL_SOURCE_DIR}/Audio.cpp"
+    "${ANGEL_SOURCE_DIR}/Sound.h"
+    "${ANGEL_SOURCE_DIR}/Sound.cpp"
 )
 
 target_link_libraries(angel PUBLIC
     SDL3::SDL3 
     SDL3_image::SDL3_image 
     SDL3_ttf::SDL3_ttf
+    miniaudio
 )
 
 target_include_directories(angel

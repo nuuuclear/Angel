@@ -23,3 +23,4 @@
 #include "../src/RenderWrapper.h"
 #include "../src/Background.h"
 #include "../src/ResourceLoading.h"
+#include "../src/Audio.h"
